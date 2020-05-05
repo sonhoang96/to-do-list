@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600&display=swap&subset=latin-ext');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.bar-question {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar-question i {
+    margin: 5px !important;
+}
+
+.bar-question i:nth-child(1) {
+    color: #11c311;
+}
+
+.bar-question i:nth-child(2) {
+    color: tomato;
+}
+
+.bar {
+    position: absolute;
+    top: 0;
+    right: -80px;
+    width: 80px;
+    height: -webkit-fill-available;
+    background: #ffefd1;
+    opacity: 0;
+    animation: 0.3s display forwards;
+    animation-delay: 1s;
+}
+
+img.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: #ff000000;
+    width: 100%;
+    height: 100%;
+}
+
+ul.list {
+    list-style: none;
+    user-select: none;
+}
+
+li.item i:nth-child(3) {
+    margin: 10px;
+    color: #9E9E9E;
+    animation: 0.3s display forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+li.item i:nth-child(3):hover {
+    color: #80a086;
+    transform: scale(1.1);
+}
+
+li.item {
+    width: inherit;
+    height: auto;
+    font-size: 2rem;
+    border-bottom: 2px solid #ffefd1;
+    display: grid;
+    grid-template-columns: 50px 350px 50px;
+    cursor: pointer;
+    background: #3F51B5;
+    position: relative;
+    animation: 1s width cubic-bezier(0.64, 0.25, 0.49, 0.95) forwards;
+}
+
+li.item.done {
+    background: transparent;
+}
+
+li.item.done .bar {
+    background: #ffefd1;
+}
+
+li.item .bar {
+    background: #3f51b5;
+}
+
+li.item i {
+    cursor: pointer;
+}
+
+i.fa-check-circle {
+    color: #1a5961;
+}
+
+i.fa-circle {
+    color: white;
+}
+
+li.item i:nth-child(1) {
+    margin: 10px;
+}
+
+p.to-do-text {
+    display: inline-block;
+    font-size: 1.3rem;
+    width: 100%;
+    height: auto;
+    color: #efefef;
+    margin: 15px 0;
+}
+
+p.to-do-text.complete {
+    text-decoration-line: line-through;
+    color: #1a5961;
+}
+
+p.to-do-text::first-letter{
+    text-transform: uppercase;
+}
+
+h3.date {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    font-size: 2rem;
+    color: #3f51b5;
+}
+
+.date-and-restore i {
+    font-size: 2rem;
+    position: absolute;
+    top: 12px;
+    right: 24px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: #3f51b5;
+}
+
+.date-and-restore i, h3.date {
+    z-index: 1;
+}
+
+.date-and-restore i:hover {
+    transform: rotate(360deg);
+    color: #7f9c83;
+}
+
+::placeholder{
+    font-size: 1rem;
+    color: #ffefd1;
+}
+
+.placeholder::placeholder{
+    color: gray;
+}
+
+input#text-input {
+    width: 100%;
+    height: 2rem;
+    margin: 10px 20px 0 10px;
+    border-radius: 10px;
+    border: 1px solid #ffefd1;
+    box-shadow: 0px 0px 1px #ffffff;
+    background: #3f51b5;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 0 0.7rem;
+}
+
+.add-to-do i {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 2rem;
+    color: #3f51b5;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-do i:hover {
+    color: #7f9a80;
+}
+
+.add-to-do {
+    height: 12%;
+    display: flex;
+    justify-content: center;
+}
+
+.list-add {
+    height: 88%;
+    overflow-y: overlay;
+}
+
+.to-do-list {
+    width: inherit;
+    height: 70%;
+    background: #ffefd1;
+}
+
+.date-and-restore {
+    position: relative;
+    width: inherit;
+    height: 30%;
+    overflow: hidden;
+    border-bottom: 2px solid #fff5e2;
+    background: linear-gradient(to right, #ffe5b461,#ffe5b461),url('../image/todolist3.jpg') center center no-repeat;
+    background-size: 100%;
+}
+
+div#app {
+    width: 450px;
+    height: 80%;
+    /* border: 2px solid #5c5d5c; */
+    box-shadow: 0px 0px 10px #5c5d5c, 0px 0px 20px #5c5d5c;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffe5b461;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Custom scroll-bar*/
+::-webkit-scrollbar {
+    width: 0px;
+}
+/* Custom scroll-bar*/
+
+@media screen and (max-height: 640px){
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+
+    li.item {
+        grid-template-columns: 50px 300px 50px;
+    }
+
+    .add-to-do {
+        height: 15%;
+    }
+
+    .list-add {
+        height: 85%;
+    }
+
+    div#app {width: 400px;}
+}
+@media screen and (max-width: 360px){
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+
+p.to-do-text {
+    font-size: 1.2rem;
+}
+
+h3#date {
+    font-size: 1.5rem;
+}
+
+    li.item {
+        grid-template-columns: 40px 220px 40px;
+    }
+
+li.item i {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .add-to-do {
+        height: 15%;
+    }
+
+    .list-add {
+        height: 85%;
+    }
+
+    div#app {width: 300px;}
+}
+@-webkit-keyframes width{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+@-webkit-keyframes display{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
